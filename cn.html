@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="PMG: 参数化运动生成器用于类人运动控制">
+  <meta name="keywords" content="Robotics, Humanoids and Animaloids, Imitation Learning, Reinforcement Learning, Locomotion Control">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PMG</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <link rel="icon" href="./favicon.ico">
+
+  <meta property="og:site_name" content="PMG: 参数化运动生成器用于类人运动控制" />
+  <meta property="og:type" content="video.other" />
+  <meta property="og:title" content="PMG: 参数化运动生成器用于类人运动控制" />
+  <meta property="og:description" content="by Chenxi Han, Yuheng Min, Zihao Huang, Ao Hong, Hang Liu, Yi Cheng, Houde Liu" />
+  <meta property="og:url" content="https://pmg-icra26.github.io/" />
+  <meta property="og:image" content="https://mobile-aloha.github.io/static/images/preview.gif" />
+  <meta property="og:image:secure" content="https://mobile-aloha.github.io/static/images/preview.gif" />
+  <meta property="og:video" content="" />
+  <meta property="og:video:secure" content="" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="720" />
+
+  <meta property="article:publisher" content="https://mobile-aloha.github.io" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PMG: 参数化运动生成器用于类人运动控制" />
+  <meta name="twitter:description" content="by Chenxi Han, Yuheng Min, Zihao Huang, Ao Hong, Hang Liu, Yi Cheng, Houde Liu" />
+  <meta name="twitter:url" content="https://pmg-icra26.github.io/" />
+  <meta name="twitter:image" content="https://pmg-icra26.github.io/static/images/preview.gif" />
+  <meta name="twitter:site" content="@ibean___" />
+  <meta name="twitter:card" content="player" />
+  <meta name="twitter:player" content="" />
+  <meta name="twitter:player:width" content="1280" />
+  <meta name="twitter:player:height" content="720" />
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+
+
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-two-thirds is-centered has-text-centered">
+          <!-- title -->
+          <h1 class="title is-1 publication-title" style="color: #8818ea;">PMG</h1>
+          <h2 class="subtitle is-2 publication-subtitle">
+            用于拟人运动控制的参数化运动生成器
+          </h2>
+          <!-- authors -->
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">
+              <a href="https://ibean625.github.io/">韩晨曦</a>,
+              <a href="./cn.html">闵宇恒</a>,
+              <a href="./cn.html">黄梓豪</a>,
+              <a href="./cn.html">洪翱</a>,
+              <a href="https://hangliu1996.github.io/">刘航</a>,
+              <a href="https://chengeeee.github.io/">程颐</a>,
+              <a href="https://www.sigs.tsinghua.edu.cn/lhd_en/main.htm">刘厚德</a>
+            </span>
+          </div>
+          <!-- conference acceptance -->
+          <div style="text-align: center; margin: 15px 0; font-size: 18px; font-weight: 600; color: #e53935;">
+            已被 ICRA 2026 录用
+          </div>
+          <!-- logo -->
+          <div style="text-align: center; margin: 20px 0; display: flex; justify-content: center; align-items: center; flex-wrap: nowrap; gap: 60px;">
+            <a href="https://www.tsinghua.edu.cn/" target="_blank" style="text-decoration: none; display: inline-block;">
+              <img src="./static/images/THU.png" style="width: auto; height: 60px;" alt="THU">
+            </a>
+            <a href="https://zerith.com/" target="_blank" style="text-decoration: none; display: inline-block;">
+              <img src="./static/images/ZERITH.png" style="width: auto; height: 60px;" alt="ZERITH">
+            </a>
+            <a href="https://umich.edu/" target="_blank" style="text-decoration: none; display: inline-block;">
+              <img src="./static/images/Umich.png" style="width: auto; height: 60px;" alt="Umich">
+            </a>
+          </div>
+          <!-- links -->
+          <div>
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./resources/PMG.pdf"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>论文</span>
+                </a>
+              </span>
+              <!-- arXiv Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2602.12656"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video link -->
+              <span class="link-block">
+                <a href="./resources/PMG.mp4"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>视频</span>
+                </a>
+              </span>
+              <!-- Language switch link -->
+              <span class="link-block">
+                <a href="./index.html" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-language"></i>
+                  </span>
+                  <span>English</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-2">摘要</h2>
+        <div class="content has-text-justified">
+          <p>
+            近年来，数据驱动的强化学习与运动跟踪技术的进步显著提升了人形机器人的行走能力，但在实际应用中仍面临关键挑战。尤其是，尽管底层的运动跟踪与轨迹跟随控制器已较为成熟，基于全身参考轨迹引导的方法却难以适配更高层级的指令接口及多样化任务场景：此类方法通常依赖大规模高质量数据集，在不同速度与姿态区间下稳定性不足，并且对机器人个体的标定误差高度敏感。
+
+            为应对上述问题，我们提出了参数化运动生成器（Parameterized Motion Generator, PMG）。该方法基于对人类运动结构的系统分析，在实时条件下，仅依托一组紧凑的参数化运动数据与高维控制指令，即可合成全身参考轨迹。结合模仿学习训练流程以及基于优化的“仿真到现实”电机参数辨识模块，我们在自主研发的类人机器人原型 ZERITH Z1 上对完整方案进行了验证。实验结果表明，在统一的系统框架下，PMG 不仅能够生成自然、类人的行走动作，还能精确响应包括基于虚拟现实（VR）的遥操作在内的高维控制输入，并实现高效且可验证的仿真到现实迁移。
+            
+            综上所述，本研究提出并实验验证了一条通向自然化、可落地类人机器人控制的可行路径。
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- video -->
+    <div class="columns is-centered">
+      <div class="column is-two-thirds is-centered has-text-centered">
+        <video download controls autoplay loop muted playsinline src="./resources/PMG.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>网站模板来自于<a href="https://nerfies.github.io/"><span class="dnerf">Nerfies</span></a> and <a href="https://robot-parkour.github.io/"><span class="dnerf">Robot-Parkour</span></a>.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
